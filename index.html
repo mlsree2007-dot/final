@@ -81,5 +81,16 @@
     <source src="song.mpeg" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
+    <!-- ✅ Autoplay Fix Script -->
+  <script>
+    window.addEventListener("load", () => {
+      const audio = document.getElementById("bg-music");
+      audio.muted = false; // unmute after load
+      audio.play().catch(err => {
+        console.log("Autoplay blocked, user must click:", err);
+      });
+    });
+  </script>
 </body>
 </html>
+
